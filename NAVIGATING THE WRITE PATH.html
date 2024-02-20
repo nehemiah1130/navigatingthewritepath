@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-GfeQ9AeZddvt5rV4F4YzY7Zzb2dWltUCatB5f+RzFZhG48AheT1wDX7Hb8Wt4pkkv7hsO2nn09D1RQ45KcdB3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <title>NAVIGATING THE WRITE PATH</title>
+</head>
+<body style="background: url(COVER.jpg); background-size: cover
+;">
+    <div class="container">
+        <form  method="POST" style="margin-top: 25%;">
+            <h2 class="text-success" style="margin-left: 18%; font-size: 35px;"><i>Welcome!</i></h2>
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <div class="row">
+                        <div class="col-2"><label for="username">Username:</label></div>
+                        <div 
+                            class="col-8"><input type="text" id="username" name="username" required><br>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-2"><label for="password">Password:</label></div>
+                        <div class="col-8">
+                                <input type="password" id="password" name="password" required><br>
+                        </div>
+                                </div>
+                                    <div class="buttonlogin mt-3" style="margin-left: 22% ;"><button id="submit" type="button">Login</button></div>
+                                    </div>
+                                    <div id="loading" style="display: none; font-size: 25px;"><i class="fas fa-spinner fa-spin"></i> Loading...</div>
+        </form>
+            </div>
+    <script>
+        $("#submit").on("click", () => {
+    const username = $("#username").val();
+    const pass = $("#password").val();
+
+    // Show loading indicator
+    $("#loading").show();
+
+    if (username === "admin" && pass === "pass") {
+        // Simulate a delay using setTimeout (remove this line in actual implementation)
+        setTimeout(() => {
+            window.location.href = "dashboard.html";
+            // Hide loading indicator after redirecting
+            $("#loading").hide();
+        }, 2000); // 2000 milliseconds (2 seconds) delay for demonstration purposes
+    } else {
+        // Hide loading indicator
+        $("#loading").hide();
+        alert("Incorrect username or password. Please try again.");
+    }
+});
+    </script>
+</body>
+
+</html>
